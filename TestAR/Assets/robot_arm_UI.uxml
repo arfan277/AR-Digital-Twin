@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Joints" style="height: 206px; justify-content: flex-start; align-items: center; flex-direction: column-reverse; position: absolute; width: 1046px; top: 1698px; left: 16px; background-color: rgba(255, 255, 255, 0.75);">
+        <ui:Slider picking-mode="Ignore" label="Joint 1" value="42" high-value="100" style="position: absolute; width: 455px; top: 17px; left: 574px; background-color: rgba(43, 35, 35, 255); font-size: 20px;" />
+    </ui:VisualElement>
+</ui:UXML>
