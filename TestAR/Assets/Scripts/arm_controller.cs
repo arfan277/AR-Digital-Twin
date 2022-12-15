@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+
 public class arm_controller : MonoBehaviour
 {
 
@@ -49,38 +50,42 @@ public class arm_controller : MonoBehaviour
 
     // part1 max and min 
     private float part1_ZRot = 0.0f;
-    public float part1_ZRotMin = -45.0f;
-    public float part1_ZRotMax = 45.0f;
+    public float part1_ZRotMin = -170.0f;
+    public float part1_ZRotMax = 170.0f;
 
     // part2 max and min
     private float part2_YRot = 0.0f;
-    public float part2_YRotMin = -45.0f;
-    public float part2_YRotMax = 45.0f; 
+    public float part2_YRotMin = -120.0f;
+    public float part2_YRotMax = 120.0f; 
 
     // part3 max and min 
     private float part3_ZRot = 0.0f;
-    public float part3_ZRotMin = -45.0f;
-    public float part3_ZRotMax = 45.0f;
+    public float part3_ZRotMin = -170.0f;
+    public float part3_ZRotMax = 170.0f;
 
     // part4 max and min 
     private float part4_YRot = 0.0f;
-    public float part4_YRotMin = -45.0f;
-    public float part4_YRotMax = 45.0f; 
+    public float part4_YRotMin = -120.0f;
+    public float part4_YRotMax = 120.0f; 
 
     // part5 max and min 
     private float part5_ZRot = 0.0f;
-    public float part5_ZRotMin = -45.0f;
-    public float part5_ZRotMax = 45.0f;
+    public float part5_ZRotMin = -170.0f;
+    public float part5_ZRotMax = 170.0f;
 
     // part6 max and min 
     private float part6_YRot = 0.0f;
-    public float part6_YRotMin = -45.0f;
-    public float part6_YRotMax = 45.0f; 
+    public float part6_YRotMin = -120.0f;
+    public float part6_YRotMax = 120.0f; 
 
     // part7 max and min 
     private float part7_ZRot = 0.0f;
-    public float part7_ZRotMin = -45.0f;
-    public float part7_ZRotMax = 45.0f;
+    public float part7_ZRotMin = -175.0f;
+    public float part7_ZRotMax = 175.0f;
+
+    Vector3 part1_origin, part2_origin, part3_origin, part4_origin, part5_origin, part6_origin, part7_origin; 
+
+
 
 
     
@@ -109,28 +114,25 @@ public class arm_controller : MonoBehaviour
         part7_slider.minValue = -1;
         part7_slider.maxValue = 1; 
 
-        // part1_origin = Vector3(part1.localEulerAngles.x, part1.localEulerAngles.y, part1.localEulerAngles.z);
-        // part2_origin = Vector3(part2.localEulerAngles.x, part2.localEulerAngles.y, part2.localEulerAngles.z);
-        // part3_origin = Vector3(part3.localEulerAngles.x, part3.localEulerAngles.y, part3.localEulerAngles.z);
-        // part4_origin = Vector3(part4.localEulerAngles.x, part4.localEulerAngles.y, part4.localEulerAngles.z);
-        // part5_origin = Vector3(part5.localEulerAngles.x, part5.localEulerAngles.y, part5.localEulerAngles.z);
-        // part6_origin = Vector3(part6.localEulerAngles.x, part6.localEulerAngles.y, part6.localEulerAngles.z);
-        // part7_origin = Vector3(part7.localEulerAngles.x, part7.localEulerAngles.y, part7.localEulerAngles.z); 
+        //Original Position
+
+        part1_origin = new Vector3(part1.transform.position.x, part1.transform.position.y, part1.transform.position.z);
+        part2_origin = new Vector3(part2.transform.position.x, part2.transform.position.y, part2.transform.position.z);
+        part3_origin = new Vector3(part3.transform.position.x, part3.transform.position.y, part3.transform.position.z);
+        part4_origin = new Vector3(part4.transform.position.x, part4.transform.position.y, part4.transform.position.z);
+        part5_origin = new Vector3(part5.transform.position.x, part5.transform.position.y, part5.transform.position.z);
+        part6_origin = new Vector3(part6.transform.position.x, part6.transform.position.y, part6.transform.position.z);
+        part7_origin = new Vector3(part7.transform.position.x, part7.transform.position.y, part7.transform.position.z);
+        // part1_origin = part1.transform.position;
+        // part2_origin = part2.transform.position;
+        // part3_origin = part3.transform.position;
+        // part4_origin = part4.transform.position;
+        // part5_origin = part5.transform.position;
+        // part6_origin = part6.transform.position;
+        // part7_origin = part7.transform.position;
+ 
         
     }
-
-    // For Origin Button
-
-    // void origin_coordinates()
-    // {
-    //     part1.localEulerAngles = new part1_origin();
-    //     part2.localEulerAngles = new part2_origin();
-    //     part3.localEulerAngles = new part3_origin();
-    //     part4.localEulerAngles = new part4_origin();
-    //     part5.localEulerAngles = new part5_origin();
-    //     part6.localEulerAngles = new part6_origin();
-    //     part7.localEulerAngles = new part7_origin();
-    // }
 
 
     void CheckInput()
@@ -143,13 +145,6 @@ public class arm_controller : MonoBehaviour
         part6_sliderValue = part6_slider.value;
         part7_sliderValue = part7_slider.value;
 
-        // part1_origin = Vector3(part1.localEulerAngles.x, part1.localEulerAngles.y, part1.localEulerAngles.z);
-        // part2_origin = Vector3(part2.localEulerAngles.x, part2.localEulerAngles.y, part2.localEulerAngles.z);
-        // part3_origin = Vector3(part3.localEulerAngles.x, part3.localEulerAngles.y, part3.localEulerAngles.z);
-        // part4_origin = Vector3(part4.localEulerAngles.x, part4.localEulerAngles.y, part4.localEulerAngles.z);
-        // part5_origin = Vector3(part5.localEulerAngles.x, part5.localEulerAngles.y, part5.localEulerAngles.z);
-        // part6_origin = Vector3(part6.localEulerAngles.x, part6.localEulerAngles.y, part6.localEulerAngles.z);
-        // part7_origin = Vector3(part7.localEulerAngles.x, part7.localEulerAngles.y, part7.localEulerAngles.z); 
     }
 
     void ProcessMovement()
@@ -214,6 +209,27 @@ public class arm_controller : MonoBehaviour
         part7_slider.value = 0.0f;
    
 
+    }
+
+    // Original PositiionButton
+    public void origin_position()
+    {
+        part1.localEulerAngles = part1_origin;
+        part2.localEulerAngles = part2_origin;
+        part3.localEulerAngles = part3_origin;
+        part4.localEulerAngles = part4_origin;
+        part5.localEulerAngles = part5_origin;
+        part6.localEulerAngles = part6_origin;
+        part7.localEulerAngles = part7_origin;
+        // part1.transform.position = part1_origin;
+        // part2.transform.position = part2_origin;
+        // part3.transform.position = part3_origin;
+        // part4.transform.position = part4_origin;
+        // part5.transform.position = part5_origin;
+        // part6.transform.position = part6_origin;
+        // part7.transform.position = part7_origin;
+
+        Debug.Log("PART 1" + part1_origin); 
     }
 
     void Update()
